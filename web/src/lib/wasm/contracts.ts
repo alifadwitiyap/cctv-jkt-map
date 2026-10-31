@@ -15,6 +15,9 @@ export interface ParsedCamera {
   lat: number;
   lng: number;
   confidence: Confidence;
+  /** Optional geocoded enrichment (from Nominatim). */
+  area?: string;
+  district?: string;
 }
 
 export interface ClusterResult {

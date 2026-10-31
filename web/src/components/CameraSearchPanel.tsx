@@ -101,7 +101,12 @@ export function CameraSearchPanel({ cameras, selectedId, onSelect }: CameraSearc
                     >
                       <span className="camera-search__item-main">
                         <span className="camera-search__name">{cam.name}</span>
-                        <span className="camera-search__id">{cam.id}</span>
+                        <span className="camera-search__meta">
+                          <span className="camera-search__id">{cam.id}</span>
+                          {cam.district && (
+                            <span className="camera-search__district">{cam.district}</span>
+                          )}
+                        </span>
                       </span>
                       <span className={`camera-search__confidence camera-search__confidence--${cam.confidence}`}>
                         {CONFIDENCE_LABEL[cam.confidence] ?? cam.confidence}

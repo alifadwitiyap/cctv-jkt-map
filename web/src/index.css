@@ -190,6 +190,25 @@ body {
   min-width: 0;
 }
 
+.camera-search__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.camera-search__district {
+  font-size: 10px;
+  color: var(--color-accent);
+  background: rgba(58, 160, 255, 0.1);
+  border-radius: 4px;
+  padding: 1px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 120px;
+}
+
 .camera-search__name {
   overflow: hidden;
   text-overflow: ellipsis;

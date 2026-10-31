@@ -6,7 +6,9 @@
     "lng": 106.7989,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501478_JKS_SATPOLPP_TAMAN-LITERASI-C01_CCTV-01/embed.html",
-    "id": "cam_001"
+    "id": "cam_001",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501493_JKP_SATPOLPP_PASAR-TANAH-ABANG-C02_CCTV-02",
@@ -15,7 +17,9 @@
     "lng": 106.798,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501493_JKP_SATPOLPP_PASAR-TANAH-ABANG-C02_CCTV-02/embed.html",
-    "id": "cam_002"
+    "id": "cam_002",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501594_JKS_DISGULKARMAT_JL.-MANGGARAI-UTARA-2-C01_CCTV-01",
@@ -24,7 +28,9 @@
     "lng": 106.8379,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501594_JKS_DISGULKARMAT_JL.-MANGGARAI-UTARA-2-C01_CCTV-01/embed.html",
-    "id": "cam_003"
+    "id": "cam_003",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-01",
@@ -33,7 +39,9 @@
     "lng": 106.8229,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-01/embed.html",
-    "id": "cam_004"
+    "id": "cam_004",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-02",
@@ -42,7 +50,9 @@
     "lng": 106.8229,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-02/embed.html",
-    "id": "cam_005"
+    "id": "cam_005",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-01",
@@ -51,7 +61,9 @@
     "lng": 106.8379,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-01/embed.html",
-    "id": "cam_006"
+    "id": "cam_006",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-03",
@@ -60,7 +72,9 @@
     "lng": 106.8379,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-03/embed.html",
-    "id": "cam_007"
+    "id": "cam_007",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-01",
@@ -69,7 +83,9 @@
     "lng": 106.8229,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-01/embed.html",
-    "id": "cam_008"
+    "id": "cam_008",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-02",
@@ -78,7 +94,9 @@
     "lng": 106.8229,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-02/embed.html",
-    "id": "cam_009"
+    "id": "cam_009",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-01",
@@ -87,7 +105,9 @@
     "lng": 106.7965,
     "confidence": "low",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-01/embed.html",
-    "id": "cam_010"
+    "id": "cam_010",
+    "area": "Grogol Petamburan",
+    "district": ""
   },
   {
     "streamPath": "501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-02",
@@ -96,7 +116,9 @@
     "lng": 106.7965,
     "confidence": "low",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-02/embed.html",
-    "id": "cam_011"
+    "id": "cam_011",
+    "area": "Grogol Petamburan",
+    "district": ""
   },
   {
     "streamPath": "502041_JKP_POLDA_JL.-KH.-MAS-MANSYUR-C02_CCTV-02",
@@ -105,7 +127,9 @@
     "lng": 106.8379,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502041_JKP_POLDA_JL.-KH.-MAS-MANSYUR-C02_CCTV-02/embed.html",
-    "id": "cam_012"
+    "id": "cam_012",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-01",
@@ -114,7 +138,9 @@
     "lng": 106.823,
     "confidence": "low",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-01/embed.html",
-    "id": "cam_013"
+    "id": "cam_013",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-02",
@@ -123,7 +149,9 @@
     "lng": 106.823,
     "confidence": "low",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-02/embed.html",
-    "id": "cam_014"
+    "id": "cam_014",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-01",
@@ -132,7 +160,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-01/embed.html",
-    "id": "cam_015"
+    "id": "cam_015",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-02",
@@ -141,7 +171,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-02/embed.html",
-    "id": "cam_016"
+    "id": "cam_016",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-01",
@@ -150,7 +182,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-01/embed.html",
-    "id": "cam_017"
+    "id": "cam_017",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-02",
@@ -159,7 +193,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-02/embed.html",
-    "id": "cam_018"
+    "id": "cam_018",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-01",
@@ -168,7 +204,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-01/embed.html",
-    "id": "cam_019"
+    "id": "cam_019",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-02",
@@ -177,7 +215,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-02/embed.html",
-    "id": "cam_020"
+    "id": "cam_020",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-01",
@@ -186,7 +226,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-01/embed.html",
-    "id": "cam_021"
+    "id": "cam_021",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-02",
@@ -195,7 +237,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-02/embed.html",
-    "id": "cam_022"
+    "id": "cam_022",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-01",
@@ -204,7 +248,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-01/embed.html",
-    "id": "cam_023"
+    "id": "cam_023",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-02",
@@ -213,7 +259,9 @@
     "lng": 106.8228,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-02/embed.html",
-    "id": "cam_024"
+    "id": "cam_024",
+    "area": "Mampang Prapatan",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-01",
@@ -222,7 +270,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-01/embed.html",
-    "id": "cam_025"
+    "id": "cam_025",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-02",
@@ -231,7 +281,9 @@
     "lng": 106.8009,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-02/embed.html",
-    "id": "cam_026"
+    "id": "cam_026",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502507_JKP_SATPOL-PP_JL.-JEND.-GATOT-SUBROTO-C11_CCTV-01",
@@ -276,7 +328,9 @@
     "lng": 106.813,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-01/embed.html",
-    "id": "cam_031"
+    "id": "cam_031",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-02",
@@ -285,7 +339,9 @@
     "lng": 106.813,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-02/embed.html",
-    "id": "cam_032"
+    "id": "cam_032",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "502645_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C08_CCTV-01",
@@ -330,7 +386,9 @@
     "lng": 106.792,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-01/embed.html",
-    "id": "cam_037"
+    "id": "cam_037",
+    "area": "Kebayoran Lama",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-02",
@@ -339,7 +397,9 @@
     "lng": 106.792,
     "confidence": "medium",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-02/embed.html",
-    "id": "cam_038"
+    "id": "cam_038",
+    "area": "Kebayoran Lama",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "503303_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C14_CCTV-01",
@@ -366,7 +426,9 @@
     "lng": 106.818,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-01/embed.html",
-    "id": "cam_041"
+    "id": "cam_041",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-02",
@@ -375,7 +437,9 @@
     "lng": 106.818,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-02/embed.html",
-    "id": "cam_042"
+    "id": "cam_042",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "503536_JKP_DBM_FLYOVER-LADOKGI-C01_CCTV-01",
@@ -402,7 +466,9 @@
     "lng": 106.8111,
     "confidence": "high",
     "streamUrl": "https://dki-jkt.balitower.co.id:7028/503675_JKP_BAKESBANGPOL_JL.-JATI-BARU-RAYA-C02_CCTV-01/embed.html",
-    "id": "cam_045"
+    "id": "cam_045",
+    "area": "Kramat Jati",
+    "district": "Jakarta Timur"
   },
   {
     "streamPath": "504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-01",
@@ -438,7 +504,9 @@
     "lng": 106.8086,
     "confidence": "medium",
     "streamUrl": "https://jakcctv.jakarta.go.id/Bendungan-Hilir-003-700014_1/embed.html?proto=hls",
-    "id": "cam_049"
+    "id": "cam_049",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "Kebon-Melati-010-700332_2",
@@ -447,7 +515,9 @@
     "lng": 106.8165,
     "confidence": "medium",
     "streamUrl": "https://jakcctv.jakarta.go.id/Kebon-Melati-010-700332_2/embed.html?proto=hls",
-    "id": "cam_050"
+    "id": "cam_050",
+    "area": "Tanah Abang",
+    "district": "Jakarta Pusat"
   },
   {
     "streamPath": "Senayan-001-705084_2",
@@ -456,7 +526,9 @@
     "lng": 106.81,
     "confidence": "medium",
     "streamUrl": "https://jakcctv.jakarta.go.id/Senayan-001-705084_2/embed.html?proto=hls",
-    "id": "cam_051"
+    "id": "cam_051",
+    "area": "",
+    "district": "Jakarta Selatan"
   },
   {
     "streamPath": "Senayan-018-705979_2",
@@ -465,6 +537,8 @@
     "lng": 106.81,
     "confidence": "medium",
     "streamUrl": "https://jakcctv.jakarta.go.id/Senayan-018-705979_2/embed.html?proto=hls",
-    "id": "cam_052"
+    "id": "cam_052",
+    "area": "",
+    "district": "Jakarta Selatan"
   }
 ]
