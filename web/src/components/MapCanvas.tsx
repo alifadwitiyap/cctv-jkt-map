@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import * as maplibregl from "maplibre-gl";
+import { setWorkerUrl } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import { MARKERS } from "../lib/cameraMarkers";
 import type { CameraMarker } from "../lib/cameraMarkers";
 
@@ -23,6 +25,10 @@ export default function MapCanvas({ selectedId, reducedMotion, onSelect }: MapCa
   useEffect(() => {
     const container = containerRef.current;
     if (!container || mapRef.current) return;
+
+    // Point MapLibre at the worker file Vite emitted for us (otherwise it
+    // 404s on the default relative worker URL).
+    setWorkerUrl(workerUrl);
 
     const map = new maplibregl.Map({
       container,
