@@ -74,14 +74,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
 }
 
 .camera-search__input {
   width: 100%;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 8px 10px;
+  border-radius: 6px;
   border: 1px solid var(--color-panel-border);
-  background: var(--color-panel);
+  background: rgba(255, 255, 255, 0.04);
   color: var(--color-text);
   font-size: 14px;
   outline: none;
@@ -510,6 +515,11 @@ body {
   flex-direction: column;
   gap: 8px;
   box-shadow: var(--shadow);
+  /* Fixed footprint: the panel must not resize as camera names change. */
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  box-sizing: border-box;
 }
 
 .tour__header {
@@ -563,6 +573,9 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  /* Flex child must be allowed to shrink below content width for ellipsis. */
+  min-width: 0;
+  width: 100%;
 }
 
 /* Traffic flow panel (TomTom) */
