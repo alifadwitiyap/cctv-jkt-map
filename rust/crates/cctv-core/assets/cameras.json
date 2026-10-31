@@ -1,0 +1,470 @@
+[
+  {
+    "streamPath": "501478_JKS_SATPOLPP_TAMAN-LITERASI-C01_CCTV-01",
+    "name": "Taman Literasi-C01",
+    "lat": -6.2435,
+    "lng": 106.7989,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501478_JKS_SATPOLPP_TAMAN-LITERASI-C01_CCTV-01/embed.html",
+    "id": "cam_001"
+  },
+  {
+    "streamPath": "501493_JKP_SATPOLPP_PASAR-TANAH-ABANG-C02_CCTV-02",
+    "name": "Simpang Jl. Panglima Polim-C01",
+    "lat": -6.2458,
+    "lng": 106.798,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501493_JKP_SATPOLPP_PASAR-TANAH-ABANG-C02_CCTV-02/embed.html",
+    "id": "cam_002"
+  },
+  {
+    "streamPath": "501594_JKS_DISGULKARMAT_JL.-MANGGARAI-UTARA-2-C01_CCTV-01",
+    "name": "Jl. Sultan Agung-C03",
+    "lat": -6.2059,
+    "lng": 106.8379,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501594_JKS_DISGULKARMAT_JL.-MANGGARAI-UTARA-2-C01_CCTV-01/embed.html",
+    "id": "cam_003"
+  },
+  {
+    "streamPath": "501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-01",
+    "name": "JKP DISHUB JL. MH. THAMRIN C01",
+    "lat": -6.1935,
+    "lng": 106.8229,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-01/embed.html",
+    "id": "cam_004"
+  },
+  {
+    "streamPath": "501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-02",
+    "name": "JKP DISHUB JL. MH. THAMRIN C01",
+    "lat": -6.1935,
+    "lng": 106.8229,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501844_JKP_DISHUB_JL.-MH.-THAMRIN-C01_CCTV-02/embed.html",
+    "id": "cam_005"
+  },
+  {
+    "streamPath": "501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-01",
+    "name": "Simpang Jl. Sultan Agung-C01",
+    "lat": -6.2059,
+    "lng": 106.8379,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-01/embed.html",
+    "id": "cam_006"
+  },
+  {
+    "streamPath": "501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-03",
+    "name": "Simpang Jl. Sultan Agung-C01",
+    "lat": -6.2059,
+    "lng": 106.8379,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501862_JKB_DISHUB_JL.-LETJEN.-S.-PARMAN-C01_CCTV-03/embed.html",
+    "id": "cam_007"
+  },
+  {
+    "streamPath": "501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-01",
+    "name": "JKP SATPOLPP JL. MH. THAMRIN C02",
+    "lat": -6.1935,
+    "lng": 106.8229,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-01/embed.html",
+    "id": "cam_008"
+  },
+  {
+    "streamPath": "501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-02",
+    "name": "JKP SATPOLPP JL. MH. THAMRIN C02",
+    "lat": -6.1935,
+    "lng": 106.8229,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501941_JKP_SATPOLPP_JL.-MH.-THAMRIN-C02_CCTV-02/embed.html",
+    "id": "cam_009"
+  },
+  {
+    "streamPath": "501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-01",
+    "name": "Simpang Jl Nurdin Raya C01",
+    "lat": -6.1601,
+    "lng": 106.7965,
+    "confidence": "low",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-01/embed.html",
+    "id": "cam_010"
+  },
+  {
+    "streamPath": "501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-02",
+    "name": "Simpang Jl Nurdin Raya C01",
+    "lat": -6.1601,
+    "lng": 106.7965,
+    "confidence": "low",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/501968-Simpang-Jl-Nurdin-Raya-C01_CCTV-02/embed.html",
+    "id": "cam_011"
+  },
+  {
+    "streamPath": "502041_JKP_POLDA_JL.-KH.-MAS-MANSYUR-C02_CCTV-02",
+    "name": "Simpang Jl. Sultan Agung-C02",
+    "lat": -6.2059,
+    "lng": 106.8379,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502041_JKP_POLDA_JL.-KH.-MAS-MANSYUR-C02_CCTV-02/embed.html",
+    "id": "cam_012"
+  },
+  {
+    "streamPath": "502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-01",
+    "name": "JKP POLDA JPO JL. GATOT SUBROTO 7",
+    "lat": -6.2265,
+    "lng": 106.823,
+    "confidence": "low",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-01/embed.html",
+    "id": "cam_013"
+  },
+  {
+    "streamPath": "502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-02",
+    "name": "JKP POLDA JPO JL. GATOT SUBROTO 7",
+    "lat": -6.2265,
+    "lng": 106.823,
+    "confidence": "low",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502045_JKP_POLDA_JPO-JL.-GATOT-SUBROTO-7_CCTV-02/embed.html",
+    "id": "cam_014"
+  },
+  {
+    "streamPath": "502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-01",
+    "name": "JKP POLDA JL. GERBANG PEMUDA C02",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-01/embed.html",
+    "id": "cam_015"
+  },
+  {
+    "streamPath": "502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-02",
+    "name": "JKP POLDA JL. GERBANG PEMUDA C02",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502155_JKP_POLDA_JL.-GERBANG-PEMUDA-C02_CCTV-02/embed.html",
+    "id": "cam_016"
+  },
+  {
+    "streamPath": "502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-01",
+    "name": "JKP POLDA JL. GERBANG PEMUDA C03",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-01/embed.html",
+    "id": "cam_017"
+  },
+  {
+    "streamPath": "502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-02",
+    "name": "JKP POLDA JL. GERBANG PEMUDA C03",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502160_JKP_POLDA_JL.-GERBANG-PEMUDA-C03_CCTV-02/embed.html",
+    "id": "cam_018"
+  },
+  {
+    "streamPath": "502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-01",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C07",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-01/embed.html",
+    "id": "cam_019"
+  },
+  {
+    "streamPath": "502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-02",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C07",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502491_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C07_CCTV-02/embed.html",
+    "id": "cam_020"
+  },
+  {
+    "streamPath": "502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-01",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C08",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-01/embed.html",
+    "id": "cam_021"
+  },
+  {
+    "streamPath": "502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-02",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C08",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502492_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C08_CCTV-02/embed.html",
+    "id": "cam_022"
+  },
+  {
+    "streamPath": "502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-01",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C09",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-01/embed.html",
+    "id": "cam_023"
+  },
+  {
+    "streamPath": "502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-02",
+    "name": "JKP SATPOL PP SIMPANG JL. MH. THAMRIN C09",
+    "lat": -6.195,
+    "lng": 106.8228,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502493_JKP_SATPOL-PP_SIMPANG-JL.-MH.-THAMRIN-C09_CCTV-02/embed.html",
+    "id": "cam_024"
+  },
+  {
+    "streamPath": "502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-01",
+    "name": "JKP SATPOL PP JL. GERBANG PEMUDA C04",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-01/embed.html",
+    "id": "cam_025"
+  },
+  {
+    "streamPath": "502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-02",
+    "name": "JKP SATPOL PP JL. GERBANG PEMUDA C04",
+    "lat": -6.2128,
+    "lng": 106.8009,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502506_JKP_SATPOL-PP_JL.-GERBANG-PEMUDA-C04_CCTV-02/embed.html",
+    "id": "cam_026"
+  },
+  {
+    "streamPath": "502507_JKP_SATPOL-PP_JL.-JEND.-GATOT-SUBROTO-C11_CCTV-01",
+    "name": "JKP SATPOL PP JL. JEND. GATOT SUBROTO C11",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502507_JKP_SATPOL-PP_JL.-JEND.-GATOT-SUBROTO-C11_CCTV-01/embed.html",
+    "id": "cam_027"
+  },
+  {
+    "streamPath": "502507_JKP_SATPOL-PP_JL.-JEND.-GATOT-SUBROTO-C11_CCTV-02",
+    "name": "JKP SATPOL PP JL. JEND. GATOT SUBROTO C11",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502507_JKP_SATPOL-PP_JL.-JEND.-GATOT-SUBROTO-C11_CCTV-02/embed.html",
+    "id": "cam_028"
+  },
+  {
+    "streamPath": "502535_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C07_CCTV-01",
+    "name": "JKB SATPOL PP SIMPANG JL. LETJEN. S. PARMAN C07",
+    "lat": -6.1695,
+    "lng": 106.7903,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502535_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C07_CCTV-01/embed.html",
+    "id": "cam_029"
+  },
+  {
+    "streamPath": "502535_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C07_CCTV-02",
+    "name": "JKB SATPOL PP SIMPANG JL. LETJEN. S. PARMAN C07",
+    "lat": -6.1695,
+    "lng": 106.7903,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502535_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C07_CCTV-02/embed.html",
+    "id": "cam_030"
+  },
+  {
+    "streamPath": "502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-01",
+    "name": "Pasar Tanah Abang-C02",
+    "lat": -6.2095,
+    "lng": 106.813,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-01/embed.html",
+    "id": "cam_031"
+  },
+  {
+    "streamPath": "502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-02",
+    "name": "Pasar Tanah Abang-C02",
+    "lat": -6.2095,
+    "lng": 106.813,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502540_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C02_CCTV-02/embed.html",
+    "id": "cam_032"
+  },
+  {
+    "streamPath": "502645_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C08_CCTV-01",
+    "name": "JKB SATPOL PP SIMPANG JL. LETJEN. S. PARMAN C08",
+    "lat": -6.1695,
+    "lng": 106.7903,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502645_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C08_CCTV-01/embed.html",
+    "id": "cam_033"
+  },
+  {
+    "streamPath": "502645_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C08_CCTV-02",
+    "name": "JKB SATPOL PP SIMPANG JL. LETJEN. S. PARMAN C08",
+    "lat": -6.1695,
+    "lng": 106.7903,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/502645_JKB_SATPOL-PP_SIMPANG-JL.-LETJEN.-S.-PARMAN-C08_CCTV-02/embed.html",
+    "id": "cam_034"
+  },
+  {
+    "streamPath": "503300_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C13_CCTV-01",
+    "name": "JKP POLDA JL. JEND. GATOT SUBROTO C13",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503300_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C13_CCTV-01/embed.html",
+    "id": "cam_035"
+  },
+  {
+    "streamPath": "503300_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C13_CCTV-02",
+    "name": "JKP POLDA JL. JEND. GATOT SUBROTO C13",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503300_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C13_CCTV-02/embed.html",
+    "id": "cam_036"
+  },
+  {
+    "streamPath": "503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-01",
+    "name": "JKP POLDA JL. TENTARA PELAJAR C04",
+    "lat": -6.2183,
+    "lng": 106.792,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-01/embed.html",
+    "id": "cam_037"
+  },
+  {
+    "streamPath": "503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-02",
+    "name": "JKP POLDA JL. TENTARA PELAJAR C04",
+    "lat": -6.2183,
+    "lng": 106.792,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503301_JKP_POLDA_JL.-TENTARA-PELAJAR-C04_CCTV-02/embed.html",
+    "id": "cam_038"
+  },
+  {
+    "streamPath": "503303_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C14_CCTV-01",
+    "name": "JKP POLDA JL. JEND. GATOT SUBROTO C14",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503303_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C14_CCTV-01/embed.html",
+    "id": "cam_039"
+  },
+  {
+    "streamPath": "503303_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C14_CCTV-02",
+    "name": "JKP POLDA JL. JEND. GATOT SUBROTO C14",
+    "lat": -6.2295,
+    "lng": 106.826,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503303_JKP_POLDA_JL.-JEND.-GATOT-SUBROTO-C14_CCTV-02/embed.html",
+    "id": "cam_040"
+  },
+  {
+    "streamPath": "503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-01",
+    "name": "Jl. KH. Mas Mansyur-C02",
+    "lat": -6.209,
+    "lng": 106.818,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-01/embed.html",
+    "id": "cam_041"
+  },
+  {
+    "streamPath": "503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-02",
+    "name": "Jl. KH. Mas Mansyur-C02",
+    "lat": -6.209,
+    "lng": 106.818,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503343_JKP_DBM_JPO-JL.-CIDENG-TIMUR-C02_CCTV-02/embed.html",
+    "id": "cam_042"
+  },
+  {
+    "streamPath": "503536_JKP_DBM_FLYOVER-LADOKGI-C01_CCTV-01",
+    "name": "JKP DBM FLYOVER LADOKGI C01",
+    "lat": -6.168,
+    "lng": 106.7895,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503536_JKP_DBM_FLYOVER-LADOKGI-C01_CCTV-01/embed.html",
+    "id": "cam_043"
+  },
+  {
+    "streamPath": "503536_JKP_DBM_FLYOVER-LADOKGI-C01_CCTV-02",
+    "name": "JKP DBM FLYOVER LADOKGI C01",
+    "lat": -6.168,
+    "lng": 106.7895,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503536_JKP_DBM_FLYOVER-LADOKGI-C01_CCTV-02/embed.html",
+    "id": "cam_044"
+  },
+  {
+    "streamPath": "503675_JKP_BAKESBANGPOL_JL.-JATI-BARU-RAYA-C02_CCTV-01",
+    "name": "Jl. Jati Baru Raya-C02",
+    "lat": -6.1845,
+    "lng": 106.8111,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/503675_JKP_BAKESBANGPOL_JL.-JATI-BARU-RAYA-C02_CCTV-01/embed.html",
+    "id": "cam_045"
+  },
+  {
+    "streamPath": "504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-01",
+    "name": "JKP POLRI UOB PLAZA C01",
+    "lat": -6.199,
+    "lng": 106.8224,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-01/embed.html",
+    "id": "cam_046"
+  },
+  {
+    "streamPath": "504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-02",
+    "name": "JKP POLRI UOB PLAZA C01",
+    "lat": -6.199,
+    "lng": 106.8224,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-02/embed.html",
+    "id": "cam_047"
+  },
+  {
+    "streamPath": "504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-03",
+    "name": "JKP POLRI UOB PLAZA C01",
+    "lat": -6.199,
+    "lng": 106.8224,
+    "confidence": "high",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/504866_JKP_POLRI_UOB-PLAZA-C01_CCTV-03/embed.html",
+    "id": "cam_048"
+  },
+  {
+    "streamPath": "Bendungan-Hilir-003-700014_1",
+    "name": "Bendungan Hilir 003",
+    "lat": -6.2087,
+    "lng": 106.8086,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/Bendungan-Hilir-003-700014_1/embed.html",
+    "id": "cam_049"
+  },
+  {
+    "streamPath": "Kebon-Melati-010-700332_2",
+    "name": "Kebon Melati 010",
+    "lat": -6.1975,
+    "lng": 106.8165,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/Kebon-Melati-010-700332_2/embed.html",
+    "id": "cam_050"
+  },
+  {
+    "streamPath": "Senayan-001-705084_2",
+    "name": "Senayan 001",
+    "lat": -6.225,
+    "lng": 106.81,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/Senayan-001-705084_2/embed.html",
+    "id": "cam_051"
+  },
+  {
+    "streamPath": "Senayan-018-705979_2",
+    "name": "Senayan 018",
+    "lat": -6.225,
+    "lng": 106.81,
+    "confidence": "medium",
+    "streamUrl": "https://dki-jkt.balitower.co.id:7028/Senayan-018-705979_2/embed.html",
+    "id": "cam_052"
+  }
+]

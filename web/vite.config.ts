@@ -8,5 +8,8 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: "./src/test/setup.ts",
+    // The shell exports NODE_ENV=production, which makes React load its
+    // production build (no React.act) and breaks @testing-library/react.
+    env: { NODE_ENV: "test" },
   },
 });

@@ -1,8 +1,156 @@
+import { useCallback, useMemo, useReducer, useState } from "react";
+import Header from "./components/Header";
+import MapCanvas from "./components/MapCanvas";
+import PlayerPanel from "./components/PlayerPanel";
+import { useReducedMotion } from "./hooks/useReducedMotion";
+import { CAMERAS } from "./lib/cameraMarkers";
+import type { CameraMarker } from "./lib/cameraMarkers";
+import type { PlayerEvent } from "./lib/playerEvents";
+import { initialPanelState, panelReducer } from "./state/panelReducer";
+import { useActivePlayer } from "./features/player/useActivePlayer";
+import { StreamHealthPanel } from "./features/player/StreamHealthPanel";
+import {
+  initialCorridorState,
+  corridorReducer,
+} from "./features/corridor/corridorReducer";
+import { CorridorEditor } from "./features/corridor/CorridorEditor";
+import { CorridorResults } from "./features/corridor/CorridorResults";
+import { GuidedTour } from "./features/corridor/GuidedTour";
+import { CURATED_CORRIDORS } from "./features/corridor/curatedCorridors";
+import { inspectCorridorService } from "./features/corridor/corridorService";
+import { inspectCorridor } from "./lib/wasm";
+
+const CORRIDOR_RADIUS_M = 1500;
+
 function App() {
+  const [panel, dispatch] = useReducer(panelReducer, initialPanelState);
+  const [corridor, dispatchCorridor] = useReducer(
+    corridorReducer,
+    initialCorridorState,
+  );
+  const [corridorOpen, setCorridorOpen] = useState(false);
+  const reducedMotion = useReducedMotion();
+
+  // Active camera (drives the map highlight, the player, and the health panel).
+  const selectedCamera = useMemo(() => {
+    if (!panel.cameraId) return null;
+    return CAMERAS.find((camera) => camera.id === panel.cameraId) ?? null;
+  }, [panel.cameraId]);
+
+  const handleSelect = useCallback((marker: CameraMarker) => {
+    dispatch({ type: "open", cameraId: marker.id, name: marker.name });
+  }, []);
+
+  const handleClose = useCallback(() => {
+    dispatch({ type: "close" });
+  }, []);
+
+  // Health inspector subscribes to the active camera's stream.
+  const { state: healthState, retry } = useActivePlayer(
+    selectedCamera
+      ? { id: selectedCamera.id, streamUrl: selectedCamera.streamUrl }
+      : null,
+  );
+
+  // Integration seam: player events (kept minimal, wired to health if needed).
+  const handlePlayerEvent = useCallback((_event: PlayerEvent) => {}, []);
+
+  // Corridor results computed through the real WASM (sync) service.
+  const corridorHits = useMemo(() => {
+    if (!corridor.finished || corridor.points.length < 2) return [];
+    try {
+      return inspectCorridorService(
+        CAMERAS,
+        corridor.points,
+        CORRIDOR_RADIUS_M,
+        inspectCorridor,
+      );
+    } catch {
+      return [];
+    }
+  }, [corridor.finished, corridor.points]);
+
+  const handleSelectCameraFromCorridor = useCallback(
+    (cameraId: string) => {
+      const marker = CAMERAS.find((camera) => camera.id === cameraId);
+      if (marker) handleSelect(marker);
+    },
+    [handleSelect],
+  );
+
   return (
-    <main>
-      <h1>CCTV Jakarta Map</h1>
-    </main>
+    <div className="app">
+      <Header />
+      <main className="app__viewport">
+        <MapCanvas
+          selectedId={panel.cameraId}
+          reducedMotion={reducedMotion}
+          onSelect={handleSelect}
+        />
+        <PlayerPanel
+          open={panel.open}
+          camera={selectedCamera}
+          reducedMotion={reducedMotion}
+          onEvent={handlePlayerEvent}
+          onClose={handleClose}
+        />
+        {panel.open && selectedCamera && (
+          <div className="health-dock">
+            <StreamHealthPanel
+              state={healthState}
+              cameraName={selectedCamera.name}
+              fallbackUrl="https://jakcctv.jakarta.go.id/publik"
+              onRetry={retry}
+            />
+          </div>
+        )}
+        <div className="corridor-dock">
+          <button
+            type="button"
+            className="corridor-toggle"
+            aria-pressed={corridorOpen}
+            onClick={() => setCorridorOpen((v) => !v)}
+          >
+            {corridorOpen ? "Close Corridor" : "Corridor"}
+          </button>
+          {corridorOpen && (
+            <>
+              <CorridorEditor
+                path={corridor.points}
+                canFinish={corridor.points.length >= 2}
+                finished={corridor.finished}
+                presets={CURATED_CORRIDORS}
+                onAddPoint={(point) =>
+                  dispatchCorridor({ type: "addPoint", point })
+                }
+                onUndo={() => dispatchCorridor({ type: "undo" })}
+                onClear={() => dispatchCorridor({ type: "clear" })}
+                onFinish={() => dispatchCorridor({ type: "finish" })}
+                onSelectPreset={(presetId) => {
+                  const preset = CURATED_CORRIDORS.find(
+                    (p) => p.id === presetId,
+                  );
+                  if (preset) dispatchCorridor({ type: "selectPreset", preset });
+                }}
+              />
+              {corridor.finished && (
+                <>
+                  <CorridorResults
+                    hits={corridorHits}
+                    selectedCameraId={panel.cameraId}
+                    onSelectCamera={handleSelectCameraFromCorridor}
+                  />
+                  <GuidedTour
+                    hits={corridorHits}
+                    onSelectCamera={handleSelectCameraFromCorridor}
+                  />
+                </>
+              )}
+            </>
+          )}
+        </div>
+      </main>
+    </div>
   );
 }
 
