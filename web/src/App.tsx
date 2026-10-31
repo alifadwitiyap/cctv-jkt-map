@@ -9,9 +9,6 @@ import type { PlayerEvent } from "./lib/playerEvents";
 import { initialPanelState, panelReducer } from "./state/panelReducer";
 import { CameraSearchPanel } from "./components/CameraSearchPanel";
 import { CinematicTour } from "./features/tour/CinematicTour";
-import { WeatherBadge } from "./features/weather/WeatherBadge";
-import { AirQualityPanel } from "./features/air/AirQualityPanel";
-import { TrafficFlowPanel } from "./features/traffic/TrafficFlowPanel";
 
 function App() {
   const [panel, dispatch] = useReducer(panelReducer, initialPanelState);
@@ -46,21 +43,6 @@ function App() {
             selectedId={panel.cameraId}
             onSelect={handleSelect}
           />
-          {panel.open && selectedCamera && (
-            <div className="health-dock">
-              <TrafficFlowPanel
-                lat={selectedCamera.lat}
-                lng={selectedCamera.lng}
-                label={selectedCamera.district || undefined}
-              />
-              <AirQualityPanel
-                lat={selectedCamera.lat}
-                lng={selectedCamera.lng}
-                label={selectedCamera.district || undefined}
-              />
-              <WeatherBadge />
-            </div>
-          )}
         </div>
         <MapCanvas
           selectedId={panel.cameraId}

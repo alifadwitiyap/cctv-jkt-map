@@ -1,5 +1,8 @@
 import { useMemo } from "react";
 import Player from "./Player";
+import { TrafficFlowPanel } from "../features/traffic/TrafficFlowPanel";
+import { AirQualityPanel } from "../features/air/AirQualityPanel";
+import { WeatherBadge } from "../features/weather/WeatherBadge";
 import type { ParsedCamera } from "../lib/wasm/contracts";
 import type { PlayerEvent } from "../lib/playerEvents";
 
@@ -46,6 +49,19 @@ export default function PlayerPanel({
             streamUrl={camera.streamUrl}
             onEvent={onEvent}
           />
+          <div className="player-panel__info">
+            <TrafficFlowPanel
+              lat={camera.lat}
+              lng={camera.lng}
+              label={camera.district || undefined}
+            />
+            <AirQualityPanel
+              lat={camera.lat}
+              lng={camera.lng}
+              label={camera.district || undefined}
+            />
+            <WeatherBadge />
+          </div>
         </>
       )}
     </aside>
