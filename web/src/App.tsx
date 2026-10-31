@@ -21,6 +21,8 @@ import { CameraSearchPanel } from "./components/CameraSearchPanel";
 import { CinematicTour } from "./features/tour/CinematicTour";
 import { WeatherBadge } from "./features/weather/WeatherBadge";
 import { AirQualityPanel } from "./features/air/AirQualityPanel";
+import { TrafficFlowPanel } from "./features/traffic/TrafficFlowPanel";
+import { TOMTOM_ENABLED } from "./features/traffic/useTrafficFlow";
 
 const CORRIDOR_RADIUS_M = 1500;
 
@@ -33,6 +35,7 @@ function App() {
   const [corridorOpen, setCorridorOpen] = useState(false);
   const [flyToTarget, setFlyToTarget] = useState<CameraMarker | null>(null);
   const [tourOpen, setTourOpen] = useState(false);
+  const [showTraffic, setShowTraffic] = useState(false);
   const reducedMotion = useReducedMotion();
 
   // Active camera (drives the map highlight, the player, and the health panel).
@@ -88,6 +91,11 @@ function App() {
           />
           {panel.open && selectedCamera && (
             <div className="health-dock">
+              <TrafficFlowPanel
+                lat={selectedCamera.lat}
+                lng={selectedCamera.lng}
+                label={selectedCamera.district || undefined}
+              />
               <AirQualityPanel
                 lat={selectedCamera.lat}
                 lng={selectedCamera.lng}
@@ -101,6 +109,7 @@ function App() {
           reducedMotion={reducedMotion}
           onSelect={handleSelect}
           flyToTarget={flyToTarget}
+          showTraffic={showTraffic}
         />
         <PlayerPanel
           open={panel.open}
@@ -119,6 +128,17 @@ function App() {
             >
               {tourOpen ? "Close Tour" : "Cinematic Tour"}
             </button>
+            {TOMTOM_ENABLED && (
+              <button
+                type="button"
+                className="corridor-toggle"
+                aria-pressed={showTraffic}
+                onClick={() => setShowTraffic((v) => !v)}
+                data-testid="traffic-toggle"
+              >
+                {showTraffic ? "Hide Traffic" : "Traffic"}
+              </button>
+            )}
             <WeatherBadge />
           </div>
           {tourOpen && (

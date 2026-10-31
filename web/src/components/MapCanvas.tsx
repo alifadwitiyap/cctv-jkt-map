@@ -5,6 +5,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import workerUrl from "maplibre-gl/dist/maplibre-gl-worker.mjs?url";
 import { MARKERS } from "../lib/cameraMarkers";
 import type { CameraMarker } from "../lib/cameraMarkers";
+import { flowTileUrl } from "../features/traffic/useTrafficFlow";
 
 interface MapCanvasProps {
   selectedId: string | null;
@@ -12,14 +13,19 @@ interface MapCanvasProps {
   onSelect: (marker: CameraMarker) => void;
   /** When set (a new camera), the map flies to it. Drives list-click panning. */
   flyToTarget: CameraMarker | null;
+  /** Show the TomTom traffic flow raster overlay. */
+  showTraffic?: boolean;
 }
+
+const TRAFFIC_SOURCE = "tomtom-flow";
+const TRAFFIC_LAYER = "tomtom-flow-layer";
 
 // MapLibre uses [lng, lat] order.
 const JKT_CENTER: [number, number] = [106.82, -6.2];
 const FLY_ZOOM = 15;
 const FLY_DURATION = 1800;
 
-export default function MapCanvas({ selectedId, reducedMotion, onSelect, flyToTarget }: MapCanvasProps) {
+export default function MapCanvas({ selectedId, reducedMotion, onSelect, flyToTarget, showTraffic = false }: MapCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markerRefs = useRef<Map<string, maplibregl.Marker>>(new Map());
@@ -99,6 +105,57 @@ export default function MapCanvas({ selectedId, reducedMotion, onSelect, flyToTa
       essential: true,
     });
   }, [flyToTarget, reducedMotion]);
+
+  // TomTom traffic flow raster overlay (toggleable).
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    const apply = () => {
+      const tileUrl = flowTileUrl();
+      if (!tileUrl) return;
+
+      if (!showTraffic) {
+        if (map.getLayer(TRAFFIC_LAYER)) map.removeLayer(TRAFFIC_LAYER);
+        if (map.getSource(TRAFFIC_SOURCE)) map.removeSource(TRAFFIC_SOURCE);
+        return;
+      }
+      if (map.getLayer(TRAFFIC_LAYER)) return; // already on
+
+      if (!map.getSource(TRAFFIC_SOURCE)) {
+        map.addSource(TRAFFIC_SOURCE, {
+          type: "raster",
+          tiles: [tileUrl],
+          tileSize: 256,
+          attribution: "Traffic © TomTom",
+        });
+      }
+      // Add on TOP of the base style: inserting before the first symbol layer
+      // buries the raster under opaque landuse/road layers.
+      map.addLayer({
+        id: TRAFFIC_LAYER,
+        type: "raster",
+        source: TRAFFIC_SOURCE,
+        paint: {
+          "raster-opacity": 0.85,
+          "raster-fade-duration": 0,
+        },
+      });
+    };
+
+    if (map.isStyleLoaded()) apply();
+    else map.once("load", apply);
+
+    return () => {
+      if (!map.getLayer(TRAFFIC_LAYER)) return;
+      try {
+        map.removeLayer(TRAFFIC_LAYER);
+        if (map.getSource(TRAFFIC_SOURCE)) map.removeSource(TRAFFIC_SOURCE);
+      } catch {
+        /* map may be torn down */
+      }
+    };
+  }, [showTraffic]);
 
   return (
     <div
