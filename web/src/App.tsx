@@ -7,8 +7,6 @@ import { CAMERAS } from "./lib/cameraMarkers";
 import type { CameraMarker } from "./lib/cameraMarkers";
 import type { PlayerEvent } from "./lib/playerEvents";
 import { initialPanelState, panelReducer } from "./state/panelReducer";
-import { useActivePlayer } from "./features/player/useActivePlayer";
-import { StreamHealthPanel } from "./features/player/StreamHealthPanel";
 import {
   initialCorridorState,
   corridorReducer,
@@ -52,13 +50,6 @@ function App() {
     dispatch({ type: "close" });
   }, []);
 
-  // Health inspector subscribes to the active camera's stream.
-  const { state: healthState, retry } = useActivePlayer(
-    selectedCamera
-      ? { id: selectedCamera.id, streamUrl: selectedCamera.streamUrl }
-      : null,
-  );
-
   // Integration seam: player events (kept minimal, wired to health if needed).
   const handlePlayerEvent = useCallback((_event: PlayerEvent) => {}, []);
 
@@ -97,12 +88,6 @@ function App() {
           />
           {panel.open && selectedCamera && (
             <div className="health-dock">
-              <StreamHealthPanel
-                state={healthState}
-                cameraName={selectedCamera.name}
-                fallbackUrl="https://jakcctv.jakarta.go.id/publik"
-                onRetry={retry}
-              />
               <AirQualityPanel
                 lat={selectedCamera.lat}
                 lng={selectedCamera.lng}
