@@ -257,6 +257,169 @@ body {
   }
 }
 
+/* Left rail: search on top, health + air quality beneath — one column, no overlap */
+.left-rail {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  bottom: 16px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(320px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.left-rail > * {
+  pointer-events: auto;
+}
+
+/* The search panel becomes a flex child (not absolutely positioned) */
+.left-rail .camera-search {
+  position: static;
+  top: auto;
+  left: auto;
+  width: 100%;
+  min-height: 0;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-rail .camera-search__list {
+  max-height: none;
+  flex: 1 1 auto;
+  min-height: 80px;
+  overflow: auto;
+}
+
+/* Health + air stack sits below the search, never on top of it */
+.left-rail .health-dock {
+  position: static;
+  left: auto;
+  bottom: auto;
+  z-index: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 0 auto;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Stream health inspector panel */
+.health-inspector {
+  background: var(--color-panel);
+  border: 1px solid var(--color-panel-border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow);
+  font-size: 12px;
+}
+
+.health-inspector__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.health-inspector__title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.health-inspector__status {
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.health-inspector__status--playing {
+  color: #55e6a5;
+  background: rgba(85, 230, 165, 0.14);
+}
+.health-inspector__status--loading,
+.health-inspector__status--buffering {
+  color: #ffd479;
+  background: rgba(255, 212, 121, 0.14);
+}
+.health-inspector__status--manifest-error,
+.health-inspector__status--decode-error,
+.health-inspector__status--disconnected {
+  color: #ff8a8a;
+  background: rgba(255, 138, 138, 0.16);
+}
+
+.health-inspector__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin: 0;
+}
+
+.health-inspector__metric dt {
+  font-size: 9px;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.health-inspector__metric dd {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.health-inspector__error {
+  font-size: 11px;
+  color: #ff8a8a;
+  background: rgba(255, 138, 138, 0.1);
+  border-radius: 6px;
+  padding: 6px 8px;
+  word-break: break-word;
+}
+
+.health-inspector__error-stage {
+  font-weight: 700;
+}
+
+.health-inspector__retry {
+  align-self: flex-start;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--color-panel-border);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.health-inspector__retry:hover {
+  border-color: var(--color-accent);
+}
+
+.health-inspector__fallback {
+  font-size: 11px;
+  color: var(--color-accent);
+}
+
 /* Dock row (tour toggle + weather) */
 .dock-row {
   display: flex;

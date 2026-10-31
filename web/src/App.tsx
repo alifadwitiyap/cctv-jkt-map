@@ -89,11 +89,28 @@ function App() {
     <div className="app">
       <Header />
       <main className="app__viewport">
-        <CameraSearchPanel
-          cameras={CAMERAS}
-          selectedId={panel.cameraId}
-          onSelect={handleSelect}
-        />
+        <div className="left-rail">
+          <CameraSearchPanel
+            cameras={CAMERAS}
+            selectedId={panel.cameraId}
+            onSelect={handleSelect}
+          />
+          {panel.open && selectedCamera && (
+            <div className="health-dock">
+              <StreamHealthPanel
+                state={healthState}
+                cameraName={selectedCamera.name}
+                fallbackUrl="https://jakcctv.jakarta.go.id/publik"
+                onRetry={retry}
+              />
+              <AirQualityPanel
+                lat={selectedCamera.lat}
+                lng={selectedCamera.lng}
+                label={selectedCamera.district || undefined}
+              />
+            </div>
+          )}
+        </div>
         <MapCanvas
           selectedId={panel.cameraId}
           reducedMotion={reducedMotion}
@@ -107,21 +124,6 @@ function App() {
           onEvent={handlePlayerEvent}
           onClose={handleClose}
         />
-        {panel.open && selectedCamera && (
-          <div className="health-dock">
-            <StreamHealthPanel
-              state={healthState}
-              cameraName={selectedCamera.name}
-              fallbackUrl="https://jakcctv.jakarta.go.id/publik"
-              onRetry={retry}
-            />
-            <AirQualityPanel
-              lat={selectedCamera.lat}
-              lng={selectedCamera.lng}
-              label={selectedCamera.district || undefined}
-            />
-          </div>
-        )}
         <div className="corridor-dock">
           <div className="dock-row">
             <button
