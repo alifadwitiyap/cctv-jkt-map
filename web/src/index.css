@@ -845,30 +845,36 @@ body {
 }
 
 .cam-marker {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #5cc2ff, var(--color-accent));
+  width: 24px;
+  height: 24px;
+  background-color: #1b2536;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2' y='6' width='13' height='10' rx='2' fill='%235cc2ff'/%3E%3Cpath d='M15 9l5-2.5v11L15 15' fill='%233aa0ff'/%3E%3Ccircle cx='8' cy='11' r='2.2' fill='%230e1520'/%3E%3C/svg%3E");
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   /* Animate ONLY opacity — NOT transform. A transform animation would override
      MapLibre's inline `transform: translate(...)` and collapse every marker to
      the origin (0,0). */
   animation: marker-pop 0.4s ease-out both;
+  box-sizing: border-box;
 }
 
 .cam-marker:hover,
 .cam-marker:focus-visible {
   /* Avoid transform here too — it would override MapLibre's inline translate. */
-  background: radial-gradient(circle at 30% 30%, #7cd0ff, #3aa0ff);
+  background-color: #274060;
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
 
 .cam-marker.is-active {
-  background: radial-gradient(circle at 30% 30%, #8be0a0, #2fbf63);
-  box-shadow: 0 0 0 6px rgba(47, 191, 99, 0.35);
+  background-color: #234a38;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Crect x='2' y='6' width='13' height='10' rx='2' fill='%2355e6a5'/%3E%3Cpath d='M15 9l5-2.5v11L15 15' fill='%232fbf63'/%3E%3Ccircle cx='8' cy='11' r='2.2' fill='%230e1520'/%3E%3C/svg%3E");
+  box-shadow: 0 0 0 5px rgba(47, 191, 99, 0.4);
 }
 
 @keyframes marker-pop {

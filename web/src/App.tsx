@@ -101,6 +101,7 @@ function App() {
                 lng={selectedCamera.lng}
                 label={selectedCamera.district || undefined}
               />
+              <WeatherBadge />
             </div>
           )}
         </div>
@@ -139,14 +140,9 @@ function App() {
                 {showTraffic ? "Hide Traffic" : "Traffic"}
               </button>
             )}
-            <WeatherBadge />
           </div>
           {tourOpen && (
-            <CinematicTour
-              cameras={CAMERAS}
-              onSelect={handleSelect}
-              reducedMotion={reducedMotion}
-            />
+            <CinematicTour cameras={CAMERAS} onSelect={handleSelect} />
           )}
           <button
             type="button"
