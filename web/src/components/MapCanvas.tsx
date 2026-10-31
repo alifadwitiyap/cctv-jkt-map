@@ -10,6 +10,8 @@ interface MapCanvasProps {
   selectedId: string | null;
   reducedMotion: boolean;
   onSelect: (marker: CameraMarker) => void;
+  /** When set (a new camera), the map flies to it. Drives list-click panning. */
+  flyToTarget: CameraMarker | null;
 }
 
 // MapLibre uses [lng, lat] order.
@@ -17,7 +19,7 @@ const JKT_CENTER: [number, number] = [106.82, -6.2];
 const FLY_ZOOM = 15;
 const FLY_DURATION = 1800;
 
-export default function MapCanvas({ selectedId, reducedMotion, onSelect }: MapCanvasProps) {
+export default function MapCanvas({ selectedId, reducedMotion, onSelect, flyToTarget }: MapCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markerRefs = useRef<Map<string, maplibregl.Marker>>(new Map());
@@ -86,6 +88,17 @@ export default function MapCanvas({ selectedId, reducedMotion, onSelect }: MapCa
       marker.getElement().classList.toggle("is-active", id === selectedId);
     });
   }, [selectedId]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !flyToTarget) return;
+    map.flyTo({
+      center: [flyToTarget.lng, flyToTarget.lat],
+      zoom: FLY_ZOOM,
+      duration: reducedMotion ? 0 : FLY_DURATION,
+      essential: true,
+    });
+  }, [flyToTarget, reducedMotion]);
 
   return (
     <div

@@ -30,6 +30,7 @@ function App() {
     initialCorridorState,
   );
   const [corridorOpen, setCorridorOpen] = useState(false);
+  const [flyToTarget, setFlyToTarget] = useState<CameraMarker | null>(null);
   const reducedMotion = useReducedMotion();
 
   // Active camera (drives the map highlight, the player, and the health panel).
@@ -39,6 +40,7 @@ function App() {
   }, [panel.cameraId]);
 
   const handleSelect = useCallback((marker: CameraMarker) => {
+    setFlyToTarget(marker);
     dispatch({ type: "open", cameraId: marker.id, name: marker.name });
   }, []);
 
@@ -92,6 +94,7 @@ function App() {
           selectedId={panel.cameraId}
           reducedMotion={reducedMotion}
           onSelect={handleSelect}
+          flyToTarget={flyToTarget}
         />
         <PlayerPanel
           open={panel.open}

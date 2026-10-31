@@ -53,7 +53,9 @@ describe("CameraSearchPanel", () => {
   it("calls onSelect with the camera marker on click", () => {
     const onSelect = vi.fn();
     render(<CameraSearchPanel cameras={cameras} selectedId={null} onSelect={onSelect} />);
-    fireEvent.click(screen.getByText(/Taman Literasi-C01/));
+    // "Taman Literasi-C01" appears as name and as id — pick the name element.
+    const el = screen.getAllByText(/Taman Literasi-C01/)[0];
+    fireEvent.click(el);
     expect(onSelect).toHaveBeenCalledTimes(1);
     const m = onSelect.mock.calls[0][0] as CameraMarker;
     expect(m.id).toBe("cam_001");
@@ -65,5 +67,12 @@ describe("CameraSearchPanel", () => {
     const sel = document.querySelector('[data-testid="camera-search-list"] [data-selected]');
     expect(sel).toBeTruthy();
     expect(sel!.textContent).toContain("Jl. Sultan Agung-C03");
+  });
+
+  it("groups cameras by location", () => {
+    render(<CameraSearchPanel cameras={cameras} selectedId={null} onSelect={() => {}} />);
+    const groupNames = Array.from(document.querySelectorAll(".camera-search__group-name")).map((e) => e.textContent);
+    expect(groupNames).toContain("Taman Literasi");
+    expect(groupNames).toContain("JKP DISHUB JL. MH. THAMRIN");
   });
 });
