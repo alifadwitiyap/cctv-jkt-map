@@ -8,36 +8,56 @@ export interface CinematicTourProps {
 }
 
 /**
- * Minimal "Next Camera" control: advances to the next camera and opens it.
- * No play/pause/timer — a single purpose-built button.
+ * Compact prev/next camera controls. No extra chrome — just two small buttons
+ * that jump between cameras and open the live stream.
  */
 export function CinematicTour({ cameras, onSelect }: CinematicTourProps) {
   const [index, setIndex] = useState(0);
 
-  const next = useCallback(() => {
-    if (cameras.length === 0) return;
-    const idx = (index + 1) % cameras.length;
-    setIndex(idx);
-    const cam = cameras[idx];
-    if (cam) {
-      onSelect({
-        id: cam.id,
-        name: cam.name,
-        lat: cam.lat,
-        lng: cam.lng,
-        confidence: cam.confidence,
-      });
-    }
-  }, [cameras, index, onSelect]);
+  const goTo = useCallback(
+    (offset: number) => {
+      if (cameras.length === 0) return;
+      const idx = ((index + offset) % cameras.length + cameras.length) % cameras.length;
+      setIndex(idx);
+      const cam = cameras[idx];
+      if (cam) {
+        onSelect({
+          id: cam.id,
+          name: cam.name,
+          lat: cam.lat,
+          lng: cam.lng,
+          confidence: cam.confidence,
+        });
+      }
+    },
+    [cameras, index, onSelect],
+  );
 
   if (cameras.length === 0) return null;
 
   return (
-    <button type="button" className="tour-next" data-testid="tour-next" onClick={next}>
-      <span className="tour-next__label">Next Camera</span>
-      <span className="tour-next__name">
-        {cameras[(index + 1) % cameras.length]?.name ?? "—"}
+    <div className="tour-nav" data-testid="tour-nav">
+      <button
+        type="button"
+        className="tour-nav__btn"
+        onClick={() => goTo(-1)}
+        aria-label="Kamera sebelumnya"
+        data-testid="tour-prev"
+      >
+        ‹
+      </button>
+      <span className="tour-nav__pos">
+        {index + 1}/{cameras.length}
       </span>
-    </button>
+      <button
+        type="button"
+        className="tour-nav__btn"
+        onClick={() => goTo(1)}
+        aria-label="Kamera berikutnya"
+        data-testid="tour-next"
+      >
+        ›
+      </button>
+    </div>
   );
 }

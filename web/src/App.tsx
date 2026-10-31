@@ -34,7 +34,6 @@ function App() {
   );
   const [corridorOpen, setCorridorOpen] = useState(false);
   const [flyToTarget, setFlyToTarget] = useState<CameraMarker | null>(null);
-  const [tourOpen, setTourOpen] = useState(false);
   const [showTraffic, setShowTraffic] = useState(false);
   const reducedMotion = useReducedMotion();
 
@@ -121,14 +120,6 @@ function App() {
         />
         <div className="corridor-dock">
           <div className="dock-row">
-            <button
-              type="button"
-              className="corridor-toggle"
-              aria-pressed={tourOpen}
-              onClick={() => setTourOpen((v) => !v)}
-            >
-              {tourOpen ? "Close Tour" : "Cinematic Tour"}
-            </button>
             {TOMTOM_ENABLED && (
               <button
                 type="button"
@@ -141,9 +132,7 @@ function App() {
               </button>
             )}
           </div>
-          {tourOpen && (
-            <CinematicTour cameras={CAMERAS} onSelect={handleSelect} />
-          )}
+          <CinematicTour cameras={CAMERAS} onSelect={handleSelect} />
           <button
             type="button"
             className="corridor-toggle"

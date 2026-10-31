@@ -505,51 +505,26 @@ body {
   color: var(--color-muted);
 }
 
-/* Cinematic tour */
-.tour {
+/* Compact prev/next camera nav */
+.tour-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   background: var(--color-panel);
   border: 1px solid var(--color-panel-border);
   border-radius: 8px;
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding: 4px 6px;
   box-shadow: var(--shadow);
-  /* Fixed footprint: the panel must not resize as camera names change. */
-  width: 240px;
-  min-width: 240px;
-  max-width: 240px;
-  box-sizing: border-box;
 }
 
-.tour__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.tour__title {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.tour__pos {
-  font-size: 11px;
-  color: var(--color-muted);
-}
-
-.tour__controls {
-  display: flex;
-  gap: 6px;
-}
-
-.tour__btn {
-  flex: 1;
-  padding: 6px 8px;
-  font-size: 12px;
+.tour-nav__btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
   border-radius: 6px;
   border: 1px solid var(--color-panel-border);
   background: transparent;
@@ -558,24 +533,17 @@ body {
   font-family: inherit;
 }
 
-.tour__btn:hover:not(:disabled) {
+.tour-nav__btn:hover {
   border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
-.tour__btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.tour__current {
-  font-size: 12px;
+.tour-nav__pos {
+  font-size: 11px;
   color: var(--color-muted);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  /* Flex child must be allowed to shrink below content width for ellipsis. */
-  min-width: 0;
-  width: 100%;
+  min-width: 40px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Traffic flow panel (TomTom) */
