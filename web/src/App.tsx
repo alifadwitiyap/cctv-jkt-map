@@ -19,6 +19,7 @@ import { GuidedTour } from "./features/corridor/GuidedTour";
 import { CURATED_CORRIDORS } from "./features/corridor/curatedCorridors";
 import { inspectCorridorService } from "./features/corridor/corridorService";
 import { inspectCorridor } from "./lib/wasm";
+import { CameraSearchPanel } from "./components/CameraSearchPanel";
 
 const CORRIDOR_RADIUS_M = 1500;
 
@@ -82,6 +83,11 @@ function App() {
     <div className="app">
       <Header />
       <main className="app__viewport">
+        <CameraSearchPanel
+          cameras={CAMERAS}
+          selectedId={panel.cameraId}
+          onSelect={handleSelect}
+        />
         <MapCanvas
           selectedId={panel.cameraId}
           reducedMotion={reducedMotion}
