@@ -1,0 +1,11 @@
+# Node
+node_modules/
+dist/
+coverage/
+
+# Rust
+target/
+
+# Env
+.env
+.env.local

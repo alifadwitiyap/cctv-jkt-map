@@ -1,0 +1,7 @@
+[package]
+name = "cctv-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cctv-core = { path = "../cctv-core" }
