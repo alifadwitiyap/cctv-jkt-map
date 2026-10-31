@@ -143,8 +143,24 @@ export class PlayerSession {
       return;
     }
 
-    const kind: RetryKind = cls.stage === "media-decode" ? "media" : "network";
+    const kind: RetryKind =
+      cls.stage === "media-decode"
+        ? "media"
+        : cls.stage === "fragment-timeout"
+          ? "fragment"
+          : "network";
     this.lastClassified = { cls, kind };
+
+    // Fragment timeouts are transient on live HLS (a stalled segment is
+    // normal). Surface them as buffering while retry is pending — NOT as a
+    // terminal-looking error — so the UI doesn't scream "unavailable" for a
+    // stream that recovers on its own.
+    if (cls.stage === "fragment-timeout") {
+      this.dispatch({ type: "waiting" });
+      this.retry.schedule(kind);
+      return;
+    }
+
     // Surface the (transient) error while the retry timer is pending.
     this.dispatch({ type: "error", error: cls, terminal: false });
     this.retry.schedule(kind);
@@ -155,6 +171,8 @@ export class PlayerSession {
     if (kind === "media") {
       this.hls.recoverMediaError?.();
     } else {
+      // network + fragment: tell hls.js to resume loading (it re-fetches
+      // the missing segment / re-resolves the playlist).
       this.hls.startLoad?.();
     }
   };

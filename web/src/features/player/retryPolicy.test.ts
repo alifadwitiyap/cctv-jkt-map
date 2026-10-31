@@ -136,6 +136,22 @@ describe("RetryController", () => {
     vi.advanceTimersByTime(5000);
     expect(onRetry).toHaveBeenCalledTimes(1);
   });
+
+  it("fragment retries: larger budget (max 5) so a stalled segment doesn't kill the stream", () => {
+    expect(shouldRetry("fragment", 0)).toBe(true);
+    expect(shouldRetry("fragment", 4)).toBe(true);
+    expect(shouldRetry("fragment", 5)).toBe(false);
+    expect(isTerminal("fragment", 5)).toBe(true);
+  });
+
+  it("fragment backoff: 0.8s/1.6s/3.2s/6.4s capped at 12.8s", () => {
+    expect(backoffMs("fragment", 0)).toBe(800);
+    expect(backoffMs("fragment", 1)).toBe(1600);
+    expect(backoffMs("fragment", 2)).toBe(3200);
+    expect(backoffMs("fragment", 3)).toBe(6400);
+    expect(backoffMs("fragment", 4)).toBe(12800);
+    expect(backoffMs("fragment", 5)).toBe(12800);
+  });
 });
 
 // type-only guard so RetryKind stays exported and used
