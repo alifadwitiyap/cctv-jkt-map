@@ -991,3 +991,63 @@ body {
     transition: none;
   }
 }
+
+/* ===== Mobile / small screens ===== */
+@media (max-width: 820px) {
+  /* When a camera is open, hide the search rail so the map + sheet are clean */
+  .app--has-player .left-rail {
+    display: none;
+  }
+
+  /* compact search: top sheet that doesn't eat the whole viewport */
+  .left-rail {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: auto;
+    width: auto;
+    max-height: 42vh;
+  }
+  .left-rail .camera-search__list {
+    flex: 1 1 auto;
+    max-height: 26vh;
+  }
+
+  /* player becomes a bottom sheet, scrollable */
+  .player-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 58vh;
+    max-height: 62vh;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transform: translateY(24px);
+  }
+  .player-panel--open {
+    transform: translateY(0);
+  }
+  .player-panel__info {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-bottom: 72px; /* clear the floating nav/attribution */
+  }
+
+  /* keep attribution visible but move nav above sheet content */
+  .corridor-dock {
+    right: 8px;
+    bottom: 8px;
+    z-index: 9;
+  }
+
+  .tour-nav__btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* when player open, don't let the map attribution cover the sheet */
+  .app--has-player .maplibregl-ctrl-attrib {
+    opacity: 0.55;
+  }
+}

@@ -34,7 +34,7 @@ function App() {
   const handlePlayerEvent = useCallback((_event: PlayerEvent) => {}, []);
 
   return (
-    <div className="app">
+    <div className={`app ${panel.open && selectedCamera ? "app--has-player" : ""}`}>
       <Header />
       <main className="app__viewport">
         <div className="left-rail">
