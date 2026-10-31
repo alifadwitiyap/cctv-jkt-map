@@ -1,6 +1,7 @@
 import Hls from "hls.js";
 import { useEffect, useRef, useState } from "react";
 import { createPlayerEmitter, type PlayerEvent, type PlayerStatus } from "../lib/playerEvents";
+import { toHlsManifest } from "../lib/hlsUrl";
 
 export interface PlayerProps {
   cameraId: string;
@@ -52,7 +53,7 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
       }
     });
 
-    hls.loadSource(streamUrl);
+    hls.loadSource(toHlsManifest(streamUrl));
     hls.attachMedia(video);
 
     return () => {

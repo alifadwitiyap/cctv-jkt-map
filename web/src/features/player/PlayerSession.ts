@@ -3,6 +3,7 @@ import { classifyError, type HlsErrorLike } from "./classifyError";
 import { healthMachine, initialHealthState, type HealthAction } from "./healthMachine";
 import { RetryController, type RetryKind } from "./retryPolicy";
 import type { ClassifiedError, HealthState } from "./types";
+import { toHlsManifest } from "../../lib/hlsUrl";
 
 /** Minimal structural view of the <video> element surface we drive. */
 export interface VideoLike {
@@ -73,7 +74,7 @@ export class PlayerSession {
     if (typeof this.video.requestVideoFrameCallback === "function") {
       this.video.requestVideoFrameCallback(this.onFirstFrame);
     }
-    this.hls.loadSource(this.streamUrl);
+    this.hls.loadSource(toHlsManifest(this.streamUrl));
     this.hls.attachMedia(this.video);
     this.onUpdate(this.state);
   }
