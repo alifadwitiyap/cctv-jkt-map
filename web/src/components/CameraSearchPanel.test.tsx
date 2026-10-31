@@ -75,4 +75,13 @@ describe("CameraSearchPanel", () => {
     expect(groupNames).toContain("Taman Literasi");
     expect(groupNames).toContain("JKP DISHUB JL. MH. THAMRIN");
   });
+
+  it("filters by district", () => {
+    const withDistrict = cameras.map((c) => ({ ...c, district: "Jakarta Pusat" }));
+    render(<CameraSearchPanel cameras={withDistrict} selectedId={null} onSelect={() => {}} />);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "pusat" } });
+    expect(screen.getAllByRole("button")).toHaveLength(4);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "selatan" } });
+    expect(screen.getByText(/Tidak ada kamera/)).toBeTruthy();
+  });
 });

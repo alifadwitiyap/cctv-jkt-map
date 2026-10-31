@@ -31,7 +31,7 @@ export function CameraSearchPanel({ cameras, selectedId, onSelect }: CameraSearc
     const filtered = !tokens.length
       ? cameras
       : cameras.filter((c) => {
-          const hay = normalize(`${c.name} ${c.id}`);
+          const hay = normalize(`${c.name} ${c.id} ${c.district ?? ""} ${c.area ?? ""}`);
           return tokens.every((t) => hay.includes(t));
         });
 
