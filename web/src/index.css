@@ -1050,4 +1050,17 @@ body {
   .app--has-player .maplibregl-ctrl-attrib {
     opacity: 0.55;
   }
+
+  /* hide the map attribution control on small screens (cleaner sheet) */
+  .maplibregl-ctrl-attrib {
+    display: none;
+  }
+
+  /* keep the video compact so the info panels below stay visible */
+  .player__video {
+    width: 100%;
+    height: auto;
+    max-height: 30vh;
+    object-fit: cover;
+  }
 }
