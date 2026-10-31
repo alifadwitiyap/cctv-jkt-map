@@ -10,7 +10,8 @@ interface MapCanvasProps {
   onSelect: (marker: CameraMarker) => void;
 }
 
-const JKT_CENTER: [number, number] = [-6.2, 106.82];
+// MapLibre uses [lng, lat] order.
+const JKT_CENTER: [number, number] = [106.82, -6.2];
 const FLY_ZOOM = 15;
 const FLY_DURATION = 1800;
 
