@@ -20,6 +20,9 @@ import { CURATED_CORRIDORS } from "./features/corridor/curatedCorridors";
 import { inspectCorridorService } from "./features/corridor/corridorService";
 import { inspectCorridor } from "./lib/wasm";
 import { CameraSearchPanel } from "./components/CameraSearchPanel";
+import { CinematicTour } from "./features/tour/CinematicTour";
+import { WeatherBadge } from "./features/weather/WeatherBadge";
+import { AirQualityPanel } from "./features/air/AirQualityPanel";
 
 const CORRIDOR_RADIUS_M = 1500;
 
@@ -31,6 +34,7 @@ function App() {
   );
   const [corridorOpen, setCorridorOpen] = useState(false);
   const [flyToTarget, setFlyToTarget] = useState<CameraMarker | null>(null);
+  const [tourOpen, setTourOpen] = useState(false);
   const reducedMotion = useReducedMotion();
 
   // Active camera (drives the map highlight, the player, and the health panel).
@@ -111,9 +115,32 @@ function App() {
               fallbackUrl="https://jakcctv.jakarta.go.id/publik"
               onRetry={retry}
             />
+            <AirQualityPanel
+              lat={selectedCamera.lat}
+              lng={selectedCamera.lng}
+              label={selectedCamera.district || undefined}
+            />
           </div>
         )}
         <div className="corridor-dock">
+          <div className="dock-row">
+            <button
+              type="button"
+              className="corridor-toggle"
+              aria-pressed={tourOpen}
+              onClick={() => setTourOpen((v) => !v)}
+            >
+              {tourOpen ? "Close Tour" : "Cinematic Tour"}
+            </button>
+            <WeatherBadge />
+          </div>
+          {tourOpen && (
+            <CinematicTour
+              cameras={CAMERAS}
+              onSelect={handleSelect}
+              reducedMotion={reducedMotion}
+            />
+          )}
           <button
             type="button"
             className="corridor-toggle"
