@@ -21,6 +21,16 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
   const videoRef = useRef<HTMLVideoElement>(null);
   const emitterRef = useRef(createPlayerEmitter());
   const [status, setStatus] = useState<PlayerStatus>("idle");
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+
+  const handleManualPlay = () => {
+    const video = videoRef.current;
+    setAutoplayBlocked(false);
+    if (video) {
+      const p = video.play();
+      p?.catch?.(() => setAutoplayBlocked(true));
+    }
+  };
 
   useEffect(() => {
     const emitter = emitterRef.current;
@@ -40,11 +50,25 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
 
     emit({ status: "loading", cameraId });
 
+    // Muted + autoplay allows programmatic playback in modern browsers;
+    // the actual play() is requested once the manifest is parsed.
+    video.autoplay = true;
+    video.muted = true;
+
     const hls = new Hls();
 
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
       hls.startLoad();
       emit({ status: "ready", cameraId });
+      const p = video.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(() => {
+          // Autoplay blocked -> surface a state the UI can turn into a
+          // "press play" affordance instead of a blank/frozen player.
+          setAutoplayBlocked(true);
+          emit({ status: "error", cameraId, detail: { type: "autoplay-blocked", fatal: false } });
+        });
+      }
     });
 
     hls.on(Hls.Events.ERROR, (_event, data) => {
@@ -73,7 +97,15 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
           Loading live stream…
         </div>
       )}
-      {status === "error" && (
+      {status === "error" && autoplayBlocked && (
+        <div className="player__autoplay-blocked" role="status">
+          <p>Tap to start live stream</p>
+          <button type="button" className="player__play-btn" onClick={handleManualPlay}>
+            ▶ Play
+          </button>
+        </div>
+      )}
+      {status === "error" && !autoplayBlocked && (
         <div className="player__error" role="alert">
           Stream unavailable for {cameraName}
         </div>
