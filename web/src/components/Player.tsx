@@ -57,6 +57,12 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
 
     const hls = new Hls();
 
+    const onPlaying = () => {
+      setAutoplayBlocked(false);
+      emit({ status: "playing", cameraId });
+    };
+    video.addEventListener("playing", onPlaying);
+
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
       hls.startLoad();
       emit({ status: "ready", cameraId });
@@ -81,33 +87,50 @@ export default function Player({ cameraId, cameraName, streamUrl, onEvent }: Pla
     hls.attachMedia(video);
 
     return () => {
+      video.removeEventListener("playing", onPlaying);
       hls.destroy();
       emit({ status: "stopped", cameraId });
     };
   }, [cameraId, streamUrl]);
 
+  const STATUS_LABEL: Record<PlayerStatus, string> = {
+    idle: "Siap",
+    loading: "Menghubungkan…",
+    ready: "Menghubungkan…",
+    playing: "Live",
+    error: "Tidak tersedia",
+    stopped: "Berhenti",
+  };
+  const statusLabel =
+    status === "error" && autoplayBlocked
+      ? "Ketuk untuk memutar"
+      : STATUS_LABEL[status];
+  const buffering = status === "loading" || status === "ready";
+
   return (
     <div className="player">
       <div className="player__meta">
-        <span className={`player__status player__status--${status}`}>{status}</span>
+        <span className={`player__status player__status--${status}`}>
+          {statusLabel}
+        </span>
       </div>
       <video ref={videoRef} className="player__video" controls playsInline muted />
-      {status === "loading" && (
+      {buffering && (
         <div className="player__loading" role="status">
-          Loading live stream…
+          Menghubungkan…
         </div>
       )}
       {status === "error" && autoplayBlocked && (
         <div className="player__autoplay-blocked" role="status">
-          <p>Tap to start live stream</p>
+          <p>Ketuk untuk memulai siaran</p>
           <button type="button" className="player__play-btn" onClick={handleManualPlay}>
-            ▶ Play
+            ▶ Putar
           </button>
         </div>
       )}
       {status === "error" && !autoplayBlocked && (
         <div className="player__error" role="alert">
-          Stream unavailable for {cameraName}
+          Siaran tidak tersedia untuk {cameraName}
         </div>
       )}
     </div>

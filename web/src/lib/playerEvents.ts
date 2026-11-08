@@ -7,7 +7,18 @@
  * health machine here.
  */
 
-export type PlayerStatus = "idle" | "loading" | "ready" | "error" | "stopped";
+/**
+ * `playing` is emitted only from the media element's own `playing` event —
+ * i.e. after frames are actually rendering. `ready` means the manifest was
+ * parsed but playback has not started yet, so it must NOT be labelled "Live".
+ */
+export type PlayerStatus =
+  | "idle"
+  | "loading"
+  | "ready"
+  | "playing"
+  | "error"
+  | "stopped";
 
 export interface PlayerEvent {
   status: PlayerStatus;
